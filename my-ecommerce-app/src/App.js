@@ -1,4 +1,5 @@
 // App.js
+
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Homepage from './components/Homepage';
@@ -14,7 +15,10 @@ const App = () => {
       <div>
         <Routes>
           {/* Route for the homepage */}
-          <Route path="/" element={<Homepage />} />
+          <Route 
+            path="/" 
+            element={<Homepage />} 
+          />
           
           {/* Protected route for the product page */}
           <Route
@@ -23,10 +27,16 @@ const App = () => {
           />
 
           {/* Route for the login page */}
-          <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
+          <Route 
+            path="/login" 
+            element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} 
+          />
           
           {/* Redirect unknown routes to the homepage */}
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route 
+            path="*" 
+            element={<Navigate to="/" />} 
+          />
         </Routes>
       </div>
     </Router>
